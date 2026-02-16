@@ -9,10 +9,13 @@ link_directories("${CMAKE_CURRENT_BINARY_DIR}/../lib")
 ## Compile all example codes, including ds202_sample1.c and ds202_sample2.c
 ## Run a for loop for each C source file
 ## All executables will appear in build/examples directory.
-foreach(src suftest mksary sasearch bwt unbwt ds202_sample1 ds202_sample2)
+foreach(src suftest mksary sasearch bwt unbwt ds202_sample1 ds202_sample2 ds202_longest_repeat ds202_random_generator)
   add_executable(${src} ${src}.c)
   target_link_libraries(${src} divsufsort)
 endforeach(src)
+
+add_executable(ds202_longest_repeat ds202_longest_repeat.c)
+target_link_libraries(ds202_longest_repeat divsufsort)
 
 ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## 
 ## You can put your code in the "examples" directory of the project.
